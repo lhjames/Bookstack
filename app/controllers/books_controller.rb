@@ -1,9 +1,11 @@
 class BooksController < ApplicationController
   def index
+    @authors = Author.all
     @books = Book.all
   end
 
   def show
+    # @author = Author.find_by_id(params[:id])
     @book = Book.find(params[:id])
   end
 
@@ -13,7 +15,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book = Book.find(params[:id])
-    @bok.destroy
+    @book.destroy
     # redirect_to root_path
   end
 
