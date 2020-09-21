@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    # @author = Author.find_by_id(params[:id])
+    @author = Author.find_by_id(params[:id])
     @book = Book.find(params[:id])
   end
 
