@@ -1,10 +1,12 @@
-class AuthorController < ApplicationController
+class AuthorsController < ApplicationController
   def index
     @authors = Author.all
+    @books = Book.all
   end
 
   def show
     @author = Author.find(params[:id])
+    @book = Book.find_by_id(params[:id])
   end
 
   def create

@@ -9,7 +9,7 @@
 puts "Creating new books..."
 
 quatre_filles = Book.create!(name: "Les Quatre filles du docteur March", :author_id => 5, rating: 4)
-quatre_filles = Book.create!(name: "La Mort et l'Ecuyer du Roi", :author_id => 6, rating: 5)
+mort_roi = Book.create!(name: "La Mort et l'Ecuyer du Roi", :author_id => 6, rating: 4)
 akata = Book.create!(name: "Akata Witch", :author_id => 7, rating: 4)
 
 puts "Seed complete!"
