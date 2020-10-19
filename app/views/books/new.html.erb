@@ -1,9 +1,16 @@
+<div class="col mt-5">
 <%= form_for(@book) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <%= f.submit %>
+	<div class="col d-flex flex-column justify-content-center align-items-center">
+
+	  <%= f.label :name %>
+	  <%= f.text_field :name %>
+
+	  <%= f.label :author %>
+	  <%= f.text_field :author %>
+	  
+	  <%= f.label :rating %>
+	  <%= f.collection_radio_buttons :rating, [[1, 'Well that sucked'] ,[2, 'Pretty awful'],[3, 'Could\'ve been better'],[4, 'Awesome'],[5, 'Absolutely perfect']], :first, :last %>
+	  <%= f.submit %>
+	</div>
 <% end %>
+</div>

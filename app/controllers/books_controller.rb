@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  require_relative 'authors_controller'
+
   def index
     @authors = Author.all
     @books = Book.all
@@ -14,18 +16,21 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
-    if @book.save
-      redirect_to book_path(@books)
-    else
-      render :new
-    end
+    @book = Book.new
+    @book.build_author
+    @book.save!
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    @book.update(book_params)
+    redirect_to root_path
   end
 
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    # redirect_to root_path
+    redirect_to root_path
   end
 
   private
