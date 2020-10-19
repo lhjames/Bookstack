@@ -9,6 +9,10 @@ class AuthorsController < ApplicationController
     @book = Book.find_by_id(params[:id])
   end
 
+  def new
+    @author = Author.new(author_params)
+  end
+
   def create
     @author = Author.new(author_params)
     if @author.save
@@ -26,6 +30,6 @@ class AuthorsController < ApplicationController
   private
 
   def author_params
-    params.require(:author).permit(:name, :books)
+    params.permit(:name, :books)
   end
 end
