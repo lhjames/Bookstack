@@ -16,8 +16,8 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new
-    @book.build_author
+    @book = Book.new(book_params)
+    # @author = @book.author.build
     @book.save!
   end
 

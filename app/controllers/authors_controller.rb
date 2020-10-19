@@ -11,6 +11,7 @@ class AuthorsController < ApplicationController
 
   def new
     @author = Author.new(author_params)
+    @book = @author.books.build
   end
 
   def create
